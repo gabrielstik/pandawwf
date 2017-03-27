@@ -14,3 +14,8 @@
   width: 50px;
   background-color: blue;
 }
+
+div[class^='braco-'] {
+  position: absolute;
+  right: 0;
+}
