@@ -10,12 +10,16 @@
   position: absolute;
   bottom: 50px;
   left: 100px;
-  height: 50px;
+  height: 30px;
   width: 50px;
-  background-color: blue;
+  background: url(../img/panda.png);
 }
 
 div[class^='braco-'] {
   position: absolute;
+  height: 50px;
+  width: 50px;
+  transform: rotate(-270deg);
+  background: url(../img/braco.png);
   right: 0;
 }
