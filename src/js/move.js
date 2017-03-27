@@ -11,9 +11,9 @@ function keyPressed() {
 	var y = 0;
 	document.body.onkeydown = function(e) {
 		if (e.keyCode == 37) { //leftArrow
-			left = 1;
-			console.log("hello");
-			console.log(left);
+			if(x > 100) {
+				left = 1; 
+			}
 		}
 		else if(e.keyCode == 38) { //upArrow
 			up = 1; 
@@ -43,9 +43,9 @@ function keyPressed() {
 	setInterval(function() {
 		x += (right - left)*15; 
 		y += (down - up)*15;
-		console.log(x);
-		console.log(y);
+		console.log("x" + x);
+		console.log("y" + y);
 		document.querySelector(".character").style.top = y+"px";
 		document.querySelector(".character").style.left = x+"px";
-	},10);
+	},100);
 }
