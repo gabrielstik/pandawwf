@@ -7,8 +7,8 @@ function keyPressed() {
 	var left = 0;
 	var right = 0;
 	var down = 0;
-	var x = 0;
-	var y = 0;
+	pandaX = 0;
+	pandaY = 0;
 	var speed = 2;
 	document.body.onkeydown = function(e) {
 		if (e.keyCode == 37) { //leftArrow
@@ -39,9 +39,9 @@ function keyPressed() {
 		}
 	}
 	setInterval(function() {
-		x += (right - left)*speed;
-		y += (down - up)*speed;
-		document.querySelector(".character").style.top = y+"px";
-		document.querySelector(".character").style.left = x+"px";
+		pandaX += (right - left)*speed;
+		pandaY += (down - up)*speed;
+		document.querySelector(".character").style.top = pandaY+"px";
+		document.querySelector(".character").style.left = pandaX+"px";
 	},10);
 }
