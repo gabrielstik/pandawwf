@@ -12,6 +12,11 @@ function spawn(a) {
   id = 0;
   for (var i = 0; i < a; i+=4) {
     id++;
+		console.log(id);
+		if(id == a / 4) {
+			level++; 
+			setTimeout('displayLevel(level)',10000); 
+		}
     var type = Math.floor(Math.random()*3);
     posY = Math.floor(Math.random()*550);
     posX = Math.floor(Math.random()*3000)+1000;

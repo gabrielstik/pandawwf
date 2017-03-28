@@ -1,3 +1,5 @@
+var level = 1;
+
 $(document).ready(function() {
 	var level = 1;
 	displayLevel(level);
@@ -12,10 +14,6 @@ function displayLevel(level) {
 		catch(e) {}
 		reset();
 		setTimeout('spawn(80);',100);
-		
-		
-		level = 2;
-		setTimeout('displayLevel(2);',15000);
 	}
 	
 	else if(level == 2) {
