@@ -20,3 +20,10 @@ function createHoles() {
 		holes();
 	}
 }
+
+function clearHoles() {
+	hol = document.querySelector(".holes");
+	for (i = 0; i < nbholes; i++) {
+		$('.hol-'+i).remove(); 
+	}
+}

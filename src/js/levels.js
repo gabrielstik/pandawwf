@@ -18,6 +18,7 @@ function displayLevel(level) {
 	}
 
 	else if(level == 2) {
+		createHoles();
 		try {
 			clearInterval(bracoloop);
 		}
@@ -28,6 +29,7 @@ function displayLevel(level) {
 	}
 
 	else if(level == 3) {
+		clearHoles(); 
 		try {
 			clearInterval(bracoloop);
 		}
@@ -38,6 +40,7 @@ function displayLevel(level) {
 	}
 
 	else if(level == 4) {
+		createHoles(); 
 		try {
 			clearInterval(bracoloop);
 		}
