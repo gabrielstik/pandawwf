@@ -12,7 +12,7 @@ function keyPressed() {
 	var rotateLeft = 90;
 	var rotateRight = 270;
 	var rotateActuel = 270;
-	pandaX = 0;
+		pandaX = 0;
 	pandaY = 0;
 	var speed = 3;
 	var rotateSpeed = 9;
