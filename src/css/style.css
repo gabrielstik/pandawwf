@@ -1,0 +1,130 @@
+/* BODY */
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  background: #ffffff;
+}
+
+
+/*********************************************************************************/
+
+
+/* HEADER */
+
+.header {
+  background-color: #000000;
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #000000;
+}
+
+.header img {
+  height: 100px;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  background-color: #ffffff;
+  border-left: 3px solid #000000;
+  border-right: 3px solid #000000;
+  border-bottom: 3px solid #000000;
+  padding: 10px;
+}
+
+
+/* Donate button */
+
+.donate-button {
+  -webkit-border-radius: 13;
+  -moz-border-radius: 13;
+  border-radius: 13px;
+  border: 2px solid #ffffff;
+  padding: 9px 40px 9px 40px;
+  font-size: 20px;
+  margin-top: 10px;
+  background: #000000;
+  text-decoration: none;
+}
+
+.donate-button a {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.donate-button:hover {
+  background: #ffffff;
+  color: #000000;
+  transition: all linear 0.2s;
+  text-decoration: none;
+}
+
+.donate-button:hover a {
+  color: #000000;
+}
+
+
+/****************************************************************************/
+
+
+/* CONTENT */
+
+.content {
+  font-size: 18px;
+  text-align: center;
+}
+
+.content #div2 {
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.content .fade {
+  display: none;
+}
+
+
+/* PLAY ZONE */
+
+.play-zone {
+  position: relative;
+  margin: auto;
+  margin-left: calc(50vw - 100px);
+}
+
+.play-zone img {
+  position: absolute;
+  bottom: -60px;
+  transition: all cubic-bezier(0.41, -0.18, 0.46, 0.57) 0.5s;
+  width: 200px;
+}
+
+
+/*Play button */
+
+.button-play {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 40px 80px;
+  outline: none;
+  background-color: #27ae60;
+  border: none;
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0 9px #95a5a6;
+  position: absolute;
+}
+
+.button-play:hover {
+  background-color: #2ecc71;
+}
+
+.button-play:active {
+  background-color: #2ecc71;
+  box-shadow: 0 3px #95a5a6;
+  transform: translateY(6px);
+}
