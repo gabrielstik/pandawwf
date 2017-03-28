@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	contact = false;
 	keyPressed();
 })
 
@@ -31,7 +32,6 @@ function keyPressed() {
 					rotateActuel -= rotateSpeed;
 					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
 				}
-				console.log(rotateActuel);
 				if(rotateActuel == rotateLeft) {
 					clearInterval(checkRotateLeft);
 					clearInterval(checkRotateLeft);
@@ -55,7 +55,6 @@ function keyPressed() {
 					rotateActuel -= rotateSpeed;
 					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
 				}
-				console.log(rotateActuel);
 				if(rotateActuel == rotateUp) {
 					clearInterval(checkRotateUp);
 					rotateActuel = rotateUp;
@@ -64,7 +63,7 @@ function keyPressed() {
 		}
 
 		else if(e.keyCode == 39) { //rightArrow
-			right = 1;
+				right = 1;
 
 			if(rotateActuel == 360) {
 				rotateActuel = 0;
@@ -80,7 +79,6 @@ function keyPressed() {
 					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
 				}
 
-				console.log(rotateActuel);
 				if(rotateActuel == rotateRight) {
 					clearInterval(checkRotateRight);
 					rotateActuel = rotateRight;
@@ -100,7 +98,6 @@ function keyPressed() {
 					rotateActuel -= rotateSpeed;
 					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
 				}
-				console.log(rotateActuel);
 				if(rotateActuel == rotateDown) {
 					clearInterval(checkRotateDown);
 					rotateActuel = rotateDown;
@@ -125,6 +122,12 @@ function keyPressed() {
 	}
 
 	setInterval(function() {
+		if (contact = true) {
+			console.log("oui");
+		}
+		else {
+			console.log("non");
+		}
 		pandaX += (right - left)*speed;
 		pandaY += (down - up)*speed;
 		if(pandaX < 0) {

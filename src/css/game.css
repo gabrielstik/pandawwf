@@ -1,9 +1,9 @@
 #game {
+  background-color: #6ba84a;
   position: relative;
   margin: auto;
   width: 1000px;
   height: 600px;
-  border: solid 1px blue;
   overflow: hidden;
 }
 
@@ -31,4 +31,20 @@ div[class^='braco-'] {
 div[class^='braco-'] img {
   width: 70px;
   width: 70px;
+}
+
+.paquerettes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+div[class^="paq-"] {
+  position: absolute;
+  background: url(../img/paquerette.png);
+  background-size: cover;
+  width: 20px;
+  height: 20px;
 }
