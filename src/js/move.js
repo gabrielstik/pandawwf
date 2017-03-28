@@ -15,42 +15,42 @@ function keyPressed() {
 	var x = 0;
 	var y = 0;
 	var speed = 3;
+	var rotateSpeed = 9; 
 
 	document.body.onkeydown = function(e) {
-		
+
 		if (e.keyCode == 37) { //leftArrow
-			left = 1;	
+			left = 1;
 
 			var checkRotateLeft = setInterval(function() {
 				if(rotateActuel < rotateLeft) {
-					rotateActuel += 5;
+					rotateActuel += rotateSpeed;
 					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
 				}
 				else if(rotateActuel > rotateLeft) {
-					rotateActuel -= 5;
+					rotateActuel -= rotateSpeed;
 					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
 				}
 				console.log(rotateActuel);
 				if(rotateActuel == rotateLeft) {
 					clearInterval(checkRotateLeft); 
-					rotateActuel = rotateLeft; 
 				}
 			},10);	
 		}
-		
+
 		else if(e.keyCode == 38) { //upArrow
 			up = 1;
-			
+
 			if(rotateActuel == 90) {
 				rotateActuel = 450; 
 			}
 			var checkRotateUp = setInterval(function() {
 				if(rotateActuel < rotateUp) {
-					rotateActuel += 5;
+					rotateActuel += rotateSpeed;
 					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
 				}
 				else if(rotateActuel > rotateUp) {
-					rotateActuel -= 5;
+					rotateActuel -= rotateSpeed;
 					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
 				}
 				console.log(rotateActuel);
@@ -60,24 +60,24 @@ function keyPressed() {
 				}
 			},10);	
 		}
-		
+
 		else if(e.keyCode == 39) { //rightArrow
 			right = 1;
-			
+
 			if(rotateActuel == 360) {
 				rotateActuel = 0; 
 			}
-			
+
 			var checkRotateRight = setInterval(function() {
 				if(rotateActuel < rotateRight) {
-					rotateActuel += 5;
+					rotateActuel += rotateSpeed;
 					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
 				}
 				else if(rotateActuel > rotateRight) {
-					rotateActuel -= 5;
+					rotateActuel -= rotateSpeed;
 					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
 				}
-				
+
 				console.log(rotateActuel);
 				if(rotateActuel == rotateRight) {
 					clearInterval(checkRotateRight); 
@@ -85,17 +85,17 @@ function keyPressed() {
 				}
 			},10);	
 		}
-		
+
 		else if(e.keyCode == 40) { //downArrow
 			down = 1;
 
 			var checkRotateDown = setInterval(function() {
 				if(rotateActuel < rotateDown) {
-					rotateActuel += 5;
+					rotateActuel += rotateSpeed;
 					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
 				}
 				else if(rotateActuel > rotateDown) {
-					rotateActuel -= 5;
+					rotateActuel -= rotateSpeed;
 					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
 				}
 				console.log(rotateActuel);
@@ -106,11 +106,10 @@ function keyPressed() {
 			},10);	
 		}
 	}
-	
-	
+
 	document.body.onkeyup = function(e) {
 		if (e.keyCode == 37) { //leftArrow
-			left = 0;
+			left = 0; 
 		}
 		else if(e.keyCode == 38) { //upArrow
 			up = 0;
@@ -122,7 +121,7 @@ function keyPressed() {
 			down = 0;
 		}
 	}
-	
+
 	setInterval(function() {
 		x += (right - left)*speed;
 		y += (down - up)*speed;
