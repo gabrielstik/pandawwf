@@ -15,6 +15,7 @@ function keyPressed() {
 	pandaX = 0;
 	pandaY = 0;
 	var speed = 3;
+	var rotateSpeed = 9;
 
 	document.body.onkeydown = function(e) {
 
@@ -23,15 +24,16 @@ function keyPressed() {
 
 			var checkRotateLeft = setInterval(function() {
 				if(rotateActuel < rotateLeft) {
-					rotateActuel += 5;
+					rotateActuel += rotateSpeed;
 					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
 				}
 				else if(rotateActuel > rotateLeft) {
-					rotateActuel -= 5;
+					rotateActuel -= rotateSpeed;
 					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
 				}
 				console.log(rotateActuel);
 				if(rotateActuel == rotateLeft) {
+					clearInterval(checkRotateLeft);
 					clearInterval(checkRotateLeft);
 					rotateActuel = rotateLeft;
 				}
@@ -46,11 +48,11 @@ function keyPressed() {
 			}
 			var checkRotateUp = setInterval(function() {
 				if(rotateActuel < rotateUp) {
-					rotateActuel += 5;
+					rotateActuel += rotateSpeed;
 					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
 				}
 				else if(rotateActuel > rotateUp) {
-					rotateActuel -= 5;
+					rotateActuel -= rotateSpeed;
 					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
 				}
 				console.log(rotateActuel);
@@ -70,11 +72,11 @@ function keyPressed() {
 
 			var checkRotateRight = setInterval(function() {
 				if(rotateActuel < rotateRight) {
-					rotateActuel += 5;
+					rotateActuel += rotateSpeed;
 					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
 				}
 				else if(rotateActuel > rotateRight) {
-					rotateActuel -= 5;
+					rotateActuel -= rotateSpeed;
 					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
 				}
 
@@ -91,11 +93,11 @@ function keyPressed() {
 
 			var checkRotateDown = setInterval(function() {
 				if(rotateActuel < rotateDown) {
-					rotateActuel += 5;
+					rotateActuel += rotateSpeed;
 					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
 				}
 				else if(rotateActuel > rotateDown) {
-					rotateActuel -= 5;
+					rotateActuel -= rotateSpeed;
 					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
 				}
 				console.log(rotateActuel);
@@ -106,7 +108,6 @@ function keyPressed() {
 			},10);
 		}
 	}
-
 
 	document.body.onkeyup = function(e) {
 		if (e.keyCode == 37) { //leftArrow
