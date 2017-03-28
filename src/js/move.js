@@ -31,12 +31,9 @@ function keyPressed() {
 				}
 				console.log(rotateActuel);
 				if(rotateActuel == rotateLeft) {
-<<<<<<< HEAD
 					clearInterval(checkRotateLeft); 
-=======
 					clearInterval(checkRotateLeft);
 					rotateActuel = rotateLeft;
->>>>>>> cbcf005d58ccf5368e09c73201dd82f9b62c0c9f
 				}
 			},10);
 		}
@@ -109,11 +106,7 @@ function keyPressed() {
 			},10);
 		}
 	}
-
-<<<<<<< HEAD
-=======
-
->>>>>>> cbcf005d58ccf5368e09c73201dd82f9b62c0c9f
+	
 	document.body.onkeyup = function(e) {
 		if (e.keyCode == 37) { //leftArrow
 			left = 0; 
@@ -130,12 +123,10 @@ function keyPressed() {
 	}
 
 	setInterval(function() {
-<<<<<<< HEAD
 		pandaX += (right - left)*speed;
 		pandaY += (down - up)*speed;
 		document.querySelector(".character").style.top = pandaY+"px";
 		document.querySelector(".character").style.left = pandaX+"px";
-=======
 		x += (right - left)*speed;
 		y += (down - up)*speed;
 		if(x < 0) {
@@ -149,6 +140,5 @@ function keyPressed() {
 		}
 		document.querySelector(".character").style.top = y+"px";
 		document.querySelector(".character").style.left = x+"px";
->>>>>>> 629b84a8caa58c6d85da7806be2d597c44c1ca57
 	},10);
 }
