@@ -27,13 +27,13 @@ function spawn() {
 function move() {
   bracoloop = setInterval(function() {
     for (var j = 0; j < braco.length; j+=4) {
-      if (((1000-braco[j+2]) - pandaX <= 50 && braco[j+1]  - pandaY <= 50) || ((1000-braco[j+2]) - pandaX >= -50 && (1000-braco[j+1]) - pandaX <= -50) {
-        console.log("hit"));
+      if (((1000-braco[j+2]) - pandaX <= 50 && braco[j+1]  - pandaY <= 50) || ((1000-braco[j+2]) - pandaX >= -50 && (1000-braco[j+1]) - pandaY <= -50)) {
+        console.log("hit");
       }
       braco[j+2] += braco[j+3];
       document.querySelector(".braco-"+braco[j]).style.right=braco[j+2]+"px";
     }
-  },20);
+  },100);
 }
 
 $(document).ready(function() {
