@@ -1,9 +1,9 @@
 var bracodiv = document.querySelector(".braco");
 
 function reset() {
-  id = 0;
-  braco = [];
-  bracodiv.innerHTML='';
+	id = 0;
+	braco = [];
+	bracodiv.innerHTML='';
 }
 
 function spawn() {
