@@ -10,7 +10,7 @@ function reset() {
 function spawn(a) {
   braco = [];
   id = 0;
-  for (var i = 0; i < a; i+=4) {
+  for (var i = 0; i < nbbracos*4; i+=4) {
     id++;
     var type = Math.floor(Math.random()*3);
     posY = Math.floor(Math.random()*550);
@@ -42,8 +42,10 @@ function move() {
       if (braco[j+1] - pandaY <= 50 && braco[j+1] - pandaY >= -50 && braco[j+2] - pandaX <= 50 && braco[j+2] - pandaX >= -50) {
         contact = true;
       }
-      braco[j+2] -= braco[j+3];
-      document.querySelector(".braco-"+braco[j]).style.left=braco[j+2]+"px";
+      else {
+        braco[j+2] -= braco[j+3];
+        document.querySelector(".braco-"+braco[j]).style.left=braco[j+2]+"px";
+      }
     }
   },20);
 }
