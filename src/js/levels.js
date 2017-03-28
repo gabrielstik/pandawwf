@@ -6,7 +6,7 @@ $(document).ready(function() {
 });
 
 function displayLevel(level) {
-	
+
 	if(level == 1) {
 		try {
 			clearInterval(bracoloop);
@@ -16,7 +16,7 @@ function displayLevel(level) {
 		nbbracos = 40; 
 		setTimeout('spawn(nbbracos);',100);
 	}
-	
+
 	else if(level == 2) {
 		try {
 			clearInterval(bracoloop);
@@ -26,7 +26,7 @@ function displayLevel(level) {
 		nbbracos = 80;
 		setTimeout('spawn(nbbracos);',100);
 	}
-	
+
 	else if(level == 3) {
 		try {
 			clearInterval(bracoloop);
@@ -36,7 +36,7 @@ function displayLevel(level) {
 		nbbracos = 120;
 		setTimeout('spawn(nbbracos);',100); 
 	}
-	
+
 	else if(level == 4) {
 		try {
 			clearInterval(bracoloop);

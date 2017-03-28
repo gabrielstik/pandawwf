@@ -41,10 +41,25 @@ div[class^='braco-'] img {
   right: 0;
 }
 
+.holes {
+	position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 div[class^="paq-"] {
   position: absolute;
   background: url(../img/paquerette.png);
   background-size: cover;
   width: 20px;
   height: 20px;
+}
+
+
+div[class^="hol-"] {
+  position: absolute;
+	background: black; 
+	border-radius: 50%; 
 }
