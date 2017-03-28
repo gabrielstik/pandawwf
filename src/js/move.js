@@ -7,11 +7,13 @@ function keyPressed() {
 	var left = 0;
 	var right = 0;
 	var down = 0;
-	var rotateUp = 360;
-	var rotateDown = 180;
-	var rotateLeft = 270;
-	var rotateRight = 90;
-	var rotateActuel = 90;
+	var rotateUp = 180;
+	var rotateDown = 0;
+	var rotateLeft = 90;
+	var rotateRight = 270;
+	var rotateActuel = 270;
+	pandaX = 0;
+	pandaY = 0;
 	var speed = 3;
 
 	document.body.onkeydown = function(e) {
@@ -122,25 +124,18 @@ function keyPressed() {
 	}
 
 	setInterval(function() {
-<<<<<<< HEAD
 		pandaX += (right - left)*speed;
 		pandaY += (down - up)*speed;
+		if(pandaX < 0) {
+			pandaY = 0;
+		}
+		if(pandaY < 0) {
+			pandaY = 0;
+		}
+		if(pandaY > 600-35) {
+			pandaY = 600-35;
+		}
 		document.querySelector(".character").style.top = pandaY+"px";
 		document.querySelector(".character").style.left = pandaX+"px";
-=======
-		x += (right - left)*speed;
-		y += (down - up)*speed;
-		if(x < 0) {
-			x = 0;
-		}
-		if(y < 0) {
-			y = 0;
-		}
-		if(y > 600-35) {
-			y = 600-35;
-		}
-		document.querySelector(".character").style.top = y+"px";
-		document.querySelector(".character").style.left = x+"px";
->>>>>>> 629b84a8caa58c6d85da7806be2d597c44c1ca57
 	},10);
 }
