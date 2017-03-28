@@ -13,7 +13,8 @@ function displayLevel(level) {
 		}
 		catch(e) {}
 		reset();
-		setTimeout('spawn(80);',100);
+		nbbracos = 40; 
+		setTimeout('spawn(nbbracos);',100);
 	}
 	
 	else if(level == 2) {
@@ -22,8 +23,27 @@ function displayLevel(level) {
 		}
 		catch(e) {}
 		reset();
-		setTimeout('spawn(280);',100);
-		
-		level = 3; 
+		nbbracos = 80;
+		setTimeout('spawn(nbbracos);',100);
+	}
+	
+	else if(level == 3) {
+		try {
+			clearInterval(bracoloop);
+		}
+		catch(e) {}
+		reset();
+		nbbracos = 120;
+		setTimeout('spawn(nbbracos);',100); 
+	}
+	
+	else if(level == 4) {
+		try {
+			clearInterval(bracoloop);
+		}
+		catch(e) {}
+		reset();
+		nbbracos = 160;
+		setTimeout('spawn(nbbracos);',100);
 	}
 }
