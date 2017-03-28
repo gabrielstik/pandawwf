@@ -1,5 +1,4 @@
 var bracodiv = document.querySelector(".braco");
-contact = false;
 
 function reset() {
   id = 0;
@@ -7,7 +6,7 @@ function reset() {
   bracodiv.innerHTML='';
 }
 
-function spawn(a) {
+function spawn() {
   braco = [];
   id = 0;
   for (var i = 0; i < nbbracos*4; i+=4) {
@@ -40,16 +39,16 @@ function move() {
     for (var j = 0; j < braco.length; j+=4) {
       if (braco[j+1] - pandaY <= 50 && braco[j+1] - pandaY >= -50 && braco[j+2] - pandaX <= 50 && braco[j+2] - pandaX >= -50) {
         contact = true;
+        pandaX -= braco[j+3];
+        document.querySelector(".character").style.left=pandaX+"px";
       }
-      else {
-        braco[j+2] -= braco[j+3];
-        document.querySelector(".braco-"+braco[j]).style.left=braco[j+2]+"px";
-      }
+      braco[j+2] -= braco[j+3];
+      document.querySelector(".braco-"+braco[j]).style.left=braco[j+2]+"px";
     }
   },20);
 }
 
-/*$(document).ready(function() {
+$(document).ready(function() {
   // setInterval(function() {
     try {
       clearInterval(bracoloop);
@@ -58,4 +57,4 @@ function move() {
     reset();
     setTimeout('spawn();',100);
   // },5000);
-});*/
+});

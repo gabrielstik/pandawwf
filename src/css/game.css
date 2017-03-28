@@ -48,3 +48,42 @@ div[class^="paq-"] {
   width: 20px;
   height: 20px;
 }
+
+.arbres {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+div[class^="arb-"] {
+  position: absolute;
+  background: url(../img/arbre.gif);
+  background-size: cover;
+  width: 80px;
+  height: 80px;
+}
+
+.rangee-arbres-top {
+  position: absolute;
+  top: -50px;
+  left: calc(50vw - 510px);
+  height: 100px;
+}
+
+.rangee-arbres-bottom {
+  position: absolute;
+  top: 550px;
+  left: calc(50vw - 510px);
+  height: 100px;
+}
+
+.rarbre {
+  margin-left: -20px;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  background: url(../img/arbre.gif);
+  background-size: cover;
+}

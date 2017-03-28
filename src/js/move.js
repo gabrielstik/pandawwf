@@ -1,5 +1,6 @@
+contact = false;
+
 $(document).ready(function() {
-	contact = false;
 	keyPressed();
 })
 
@@ -13,101 +14,41 @@ function keyPressed() {
 	var rotateLeft = 90;
 	var rotateRight = 270;
 	var rotateActuel = 270;
-	pandaX = 0;
-	pandaY = 0;
+	pandaX = 50;
+	pandaY = 275;
 	var speed = 3;
+	var sp = 1;
 	var rotateSpeed = 9;
 
 	document.body.onkeydown = function(e) {
 
 		if (e.keyCode == 37) { //leftArrow
-			left = 1;
-
-			var checkRotateLeft = setInterval(function() {
-				if(rotateActuel < rotateLeft) {
-					rotateActuel += rotateSpeed;
-					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
-				}
-				else if(rotateActuel > rotateLeft) {
-					rotateActuel -= rotateSpeed;
-					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
-				}
-				if(rotateActuel == rotateLeft) {
-					clearInterval(checkRotateLeft);
-					clearInterval(checkRotateLeft);
-					rotateActuel = rotateLeft;
-				}
-			},10);
+			left = 1 * sp;
+			contact = false;
 		}
 
-		else if(e.keyCode == 38) { //upArrow
-			up = 1;
-
-			if(rotateActuel == 90) {
-				rotateActuel = 450;
-			}
-			var checkRotateUp = setInterval(function() {
-				if(rotateActuel < rotateUp) {
-					rotateActuel += rotateSpeed;
-					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
-				}
-				else if(rotateActuel > rotateUp) {
-					rotateActuel -= rotateSpeed;
-					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
-				}
-				if(rotateActuel == rotateUp) {
-					clearInterval(checkRotateUp);
-					rotateActuel = rotateUp;
-				}
-			},10);
+		if(e.keyCode == 38) { //upArrow
+			up = 1 * sp;
+			contact = false;
 		}
 
-		else if(e.keyCode == 39) { //rightArrow
-				if (contact == true) {
-					right = 1;
+		if (contact == false) {
+			if(e.keyCode == 39) { //rightArrow
+				if (contact == false) {
+						right = 1 * sp;
 				}
 				else {
 					right = 0;
 				}
-
-			if(rotateActuel == 360) {
-				rotateActuel = 0;
 			}
-
-			var checkRotateRight = setInterval(function() {
-				if(rotateActuel < rotateRight) {
-					rotateActuel += rotateSpeed;
-					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
-				}
-				else if(rotateActuel > rotateRight) {
-					rotateActuel -= rotateSpeed;
-					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
-				}
-
-				if(rotateActuel == rotateRight) {
-					clearInterval(checkRotateRight);
-					rotateActuel = rotateRight;
-				}
-			},10);
 		}
 
-		else if(e.keyCode == 40) { //downArrow
-			down = 1;
-
-			var checkRotateDown = setInterval(function() {
-				if(rotateActuel < rotateDown) {
-					rotateActuel += rotateSpeed;
-					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
-				}
-				else if(rotateActuel > rotateDown) {
-					rotateActuel -= rotateSpeed;
-					document.querySelector(".character").style.transform = "rotate(" + rotateActuel + "deg)";
-				}
-				if(rotateActuel == rotateDown) {
-					clearInterval(checkRotateDown);
-					rotateActuel = rotateDown;
-				}
-			},10);
+		if(e.keyCode == 40) { //downArrow
+			down = 1 * sp;
+			contact = false;
+		}
+		if (e.keyCode == 16) {
+			sp = 5;
 		}
 	}
 
@@ -119,22 +60,27 @@ function keyPressed() {
 			up = 0;
 		}
 		else if(e.keyCode == 39) { //rightArrow
-			right = 0;
+			if (contact == false) {
+				right = 0;
+			}
 		}
 		else if(e.keyCode == 40) { //downArrow
 			down = 0;
 		}
+		else if(e.keyCode == 16) {
+			sp = 1;
+		}
 	}
 
 	setInterval(function() {
-		if (contact = true) {
-			console.log("oui");
+		console.log(contact);
+		if (contact == false) {
+			pandaX += (right - left)*speed;
+			pandaY += (down - up)*speed;
 		}
 		else {
-			console.log("non");
+			pandaY += (down - up)*(speed+1);
 		}
-		pandaX += (right - left)*speed;
-		pandaY += (down - up)*speed;
 		if(pandaY < 0) {
 			pandaY = 0;
 		}
@@ -142,7 +88,6 @@ function keyPressed() {
 			pandaY = 600-70;
 		}
 		document.querySelector(".character").style.top = pandaY+"px";
-		console.log(contact);
 		document.querySelector(".character").style.left = pandaX+"px";
-	},10);
+	},20);
 }
