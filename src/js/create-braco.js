@@ -7,7 +7,7 @@ function reset() {
   bracodiv.innerHTML='';
 }
 
-function spawn() {
+function spawn(a) {
   braco = [];
   id = 0;
   for (var i = 0; i < nbbracos*4; i+=4) {
@@ -49,7 +49,7 @@ function move() {
   },20);
 }
 
-$(document).ready(function() {
+/*$(document).ready(function() {
   // setInterval(function() {
     try {
       clearInterval(bracoloop);
@@ -58,4 +58,4 @@ $(document).ready(function() {
     reset();
     setTimeout('spawn();',100);
   // },5000);
-});
+});*/
