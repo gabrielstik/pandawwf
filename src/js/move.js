@@ -2,6 +2,11 @@ contact = false;
 perdu = false;
 gagne = false;
 
+$(document).ready(function() {
+	keyPressed();
+})
+var sound = document.querySelector("#music");
+
 function keyPressed() {
 	var up = 0;
 	var left = 0;
@@ -18,16 +23,29 @@ function keyPressed() {
 	var sp = 1;
 	var rotateSpeed = 9;
 
+
 	document.body.onkeydown = function(e) {
+
+		if (e.keyCode == 97) { //leftArrow
+			sound.play();
+		}
+
+		if (e.keyCode == 96) { //leftArrow
+			sound.pause();
+			sound.currentTime = 0;
+		}
 
 		if (e.keyCode == 37) { //leftArrow
 			left = 1 * sp;
 			contact = false;
+			sound.play();
 		}
 
 		if(e.keyCode == 38) { //upArrow
 			up = 1 * sp;
 			contact = false;
+			sound.pause();
+			sound.currentTime = 0;
 		}
 
 		if (contact == false) {
