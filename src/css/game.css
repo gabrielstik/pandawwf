@@ -1,3 +1,9 @@
+/* All game style */
+
+body {
+  background-color: #6ba84a;
+}
+
 #game {
   background-color: #6ba84a;
   position: relative;
@@ -7,9 +13,29 @@
   overflow: hidden;
 }
 
+.left-decor {
+  position: absolute;
+  margin-top: -600px;
+  right: calc(50% - 610px);
+  width: 196px;
+  height: 600px;
+  background-image: url(../img/decor-right.gif);
+  background-size: contain;
+}
+
+.right-decor {
+  position: absolute;
+  margin-top: -600px;
+  left: calc(50% - 610px);
+  width: 203px;
+  height: 600px;
+  background-image: url(../img/decor-left.png);
+  background-size: contain;
+}
+
 .character {
   position: absolute;
-  bottom: 50px;
+  top: 275px;
   left: 100px;
   height: 70px;
   width: 70px;
@@ -33,7 +59,7 @@ div[class^='braco-'] img {
   width: 70px;
 }
 
-.paquerettes {
+.daisies {
   position: absolute;
   top: 0;
   left: 0;
@@ -49,7 +75,7 @@ div[class^='braco-'] img {
   right: 0;
 }
 
-div[class^="paq-"] {
+div[class^="dai-"] {
   position: absolute;
   background: url(../img/paquerette.png);
   background-size: cover;
@@ -57,7 +83,7 @@ div[class^="paq-"] {
   height: 20px;
 }
 
-.arbres {
+.trees {
   position: absolute;
   top: 0;
   left: 0;
@@ -65,7 +91,7 @@ div[class^="paq-"] {
   right: 0;
 }
 
-div[class^="arb-"] {
+div[class^="tre-"] {
   position: absolute;
   background: url(../img/arbre.gif);
   background-size: cover;
@@ -73,25 +99,91 @@ div[class^="arb-"] {
   height: 80px;
 }
 
-.rangee-arbres-top {
+.row-trees-top {
   position: absolute;
   top: -50px;
   left: calc(50vw - 510px);
   height: 100px;
 }
 
-.rangee-arbres-bottom {
+.row-trees-bottom {
   position: absolute;
   top: 550px;
   left: calc(50vw - 510px);
   height: 100px;
 }
 
-.rarbre {
+.row-tree {
   margin-left: -20px;
   width: 100px;
   height: 100px;
   display: inline-block;
   background: url(../img/arbre.gif);
   background-size: cover;
+}
+
+.context {
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: calc(50% - 500px);
+  color: white;
+  text-shadow: -10px 0 black, 0 10px black, 10px 0 black, 0 -10px black;
+  width: 1000px;
+  text-align: center;
+  font-family: 'Baloo Bhaina';
+  font-size: 200px;
+  margin: 0;
+  padding: 0;
+}
+
+.end-window {
+  padding: 20px;
+  display: block;
+  position: absolute;
+  top: 100px;
+  left: calc(50% - 295px);
+  width: 550px;
+  height: 350px;
+  background: url(../img/window-bg.png);
+  background-size: cover;
+  background-repeat: none;
+  background-position: center;
+  box-shadow: 10px -10px 50px black, 5px 10px 50px black;
+}
+
+.end-window p {
+  margin: 15px;
+  color: rgb(50,50,50);
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Baloo Bhaina';
+}
+
+.stage {
+  display: none; /* temporaire */
+}
+
+.end-window button {
+  position: absolute;
+  bottom: 20px;
+  cursor: pointer;
+  width: 200px;
+  margin-left: 170px;
+  border: none;
+  background-color: #6ba84a;
+  box-shadow: 0px 8px 1px rgb(70,140,40), 8px 8px 1px rgb(70,140,40);
+  border-radius: 30px;
+  text-transform: uppercase;
+  color: white;
+  font-size: 18px;
+  font-family: 'Baloo Bhaina';
+  outline-width: 0;
+  opacity: .9;
+  transition: all .2s ease;
+}
+
+.end-window button:hover {
+  opacity: 1;
+  transition: all .2s ease;
 }

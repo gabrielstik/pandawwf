@@ -1,12 +1,12 @@
 var bracodiv = document.querySelector(".braco");
 
-function reset() {
+function reset() { // main reset function for bracos
 	id = 0;
 	braco = [];
 	bracodiv.innerHTML='';
 }
 
-function spawn() {
+function spawn(nbbracos) { // creating bracos
   braco = [];
   id = 0;
   for (var i = 0; i < nbbracos*4; i+=4) {
@@ -34,12 +34,12 @@ function spawn() {
   move();
 }
 
-function move() {
+function move() { // bracos' move
   bracoloop = setInterval(function() {
     for (var j = 0; j < braco.length; j+=4) {
-      if (braco[j+1] - pandaY <= 50 && braco[j+1] - pandaY >= -50 && braco[j+2] - pandaX <= 50 && braco[j+2] - pandaX >= -50) {
+      if (braco[j+1] - pandaY <= 50 && braco[j+1] - pandaY >= -50 && braco[j+2] - pandaX <= 50 && braco[j+2] - pandaX >= -20) {
         contact = true;
-        pandaX -= braco[j+3];
+        pandaX = braco[j+2]-50;
         document.querySelector(".character").style.left=pandaX+"px";
       }
       braco[j+2] -= braco[j+3];
@@ -54,7 +54,5 @@ $(document).ready(function() {
       clearInterval(bracoloop);
     }
     catch(e) {}
-    reset();
-    setTimeout('spawn();',100);
   // },5000);
 });

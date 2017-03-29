@@ -1,10 +1,8 @@
 contact = false;
+perdu = false;
+gagne = false;
 
-$(document).ready(function() {
-	keyPressed();
-})
-
-function keyPressed() {
+function keyPressed() { // if key pressed
 	var up = 0;
 	var left = 0;
 	var right = 0;
@@ -14,7 +12,7 @@ function keyPressed() {
 	var rotateLeft = 90;
 	var rotateRight = 270;
 	var rotateActuel = 270;
-	pandaX = 50;
+	pandaX = 100;
 	pandaY = 275;
 	var speed = 3;
 	var sp = 1;
@@ -47,9 +45,6 @@ function keyPressed() {
 			down = 1 * sp;
 			contact = false;
 		}
-		if (e.keyCode == 16) {
-			sp = 5;
-		}
 	}
 
 	document.body.onkeyup = function(e) {
@@ -67,13 +62,9 @@ function keyPressed() {
 		else if(e.keyCode == 40) { //downArrow
 			down = 0;
 		}
-		else if(e.keyCode == 16) {
-			sp = 1;
-		}
 	}
 
-	setInterval(function() {
-		console.log(contact);
+	moveInterval = setInterval(function moveBraco() {
 		if (contact == false) {
 			pandaX += (right - left)*speed;
 			pandaY += (down - up)*speed;
@@ -89,5 +80,43 @@ function keyPressed() {
 		}
 		document.querySelector(".character").style.top = pandaY+"px";
 		document.querySelector(".character").style.left = pandaX+"px";
+		if (down != 0 && left == 0 && right == 0) {
+			$(".character").css("transform","rotate(0deg)");
+		}
+		else if (down != 0 && left != 0 && right == 0) {
+			$(".character").css("transform","rotate(45deg)");
+		}
+		else if (down != 0 && left == 0 && right != 0) {
+			$(".character").css("transform","rotate(305deg)");
+		}
+		else if (up != 0 && left == 0 && right == 0) {
+			$(".character").css("transform","rotate(180deg)");
+		}
+		else if (up != 0 && left != 0 && right == 0) {
+			$(".character").css("transform","rotate(135deg)");
+		}
+		else if (up != 0 && left == 0 && right != 0) {
+			$(".character").css("transform","rotate(225deg)");
+		}
+		else if (left != 0) {
+			$(".character").css("transform","rotate(90deg)");
+		}
+		else if (right != 0) {
+			$(".character").css("transform","rotate(270deg)");
+		}
+		if (pandaX <= 25) {
+			if (perdu == false) {
+				perdu = true;
+				lose();
+				// reset si defaite;
+			}
+		}
+		if (pandaX >= 1025) {
+			if (gagne == false) {
+				gagne = true;
+				win();
+				// reset si victoire;
+			}
+		}
 	},20);
 }

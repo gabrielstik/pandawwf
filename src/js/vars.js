@@ -1,3 +1,4 @@
-nbpaquerettes = 20;
-nbbracos = 50;
-nbarbres = 5;
+// main vars
+
+nbdaisies = 50;
+nbtrees = 5;

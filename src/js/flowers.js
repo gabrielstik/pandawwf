@@ -1,16 +1,16 @@
-function paquerettes() {
-  paqX = Math.floor(Math.random()*1000);
-  paqY = Math.floor(Math.random()*550);
-  fen.innerHTML+='<div class="paq-'+i+'"></div>';
-  $('.paq-'+i).css({
-    "left": paqX,
-    "top": paqY
+function daisies() {
+  daiX = Math.floor(Math.random()*1000);
+  daiY = Math.floor(Math.random()*550);
+  fen.innerHTML+='<div class="dai-'+i+'"></div>';
+  $('.dai-'+i).css({
+    "left": daiX,
+    "top": daiY
   });
 }
 
 $(document).ready(function() {
-  fen = document.querySelector(".paquerettes");
-  for (i = 0; i < nbpaquerettes; i++) {
-    paquerettes();
+  fen = document.querySelector(".daisies");
+  for (i = 0; i < nbdaisies; i++) {
+    daisies();
   }
 });

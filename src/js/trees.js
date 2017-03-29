@@ -1,24 +1,28 @@
-function arbres() {
-  arbX = Math.floor(Math.random()*900)+100;
-  arbY = Math.floor(Math.random()*550);
-  fen2.innerHTML+='<div class="arb-'+j+'"></div>';
-  $('.arb-'+j).css({
-    "left": arbX,
-    "top": arbY
+// Generates trees
+
+function trees() {
+  treX = Math.floor(Math.random()*900)+100;
+  treY = Math.floor(Math.random()*550);
+  fen2.innerHTML+='<div class="tre-'+j+'"></div>';
+  $('.tre-'+j).css({
+    "left": treX,
+    "top": treY
   });
 }
 
-function rangeearbres() {
+// Generates trees rows
+
+function rowtrees() {
   for (k = 0; k < 13; k++) {
-    document.querySelector('.rangee-arbres-top').innerHTML+='<div class="rarbre"></div>';
-    document.querySelector('.rangee-arbres-bottom').innerHTML+='<div class="rarbre"></div>';
+    document.querySelector('.row-trees-top').innerHTML+='<div class="row-tree"></div>';
+    document.querySelector('.row-trees-bottom').innerHTML+='<div class="row-tree"></div>';
   }
 }
 
 $(document).ready(function() {
-  rangeearbres();
-  fen2 = document.querySelector(".arbres");
-  for (j = 0; j < nbarbres; j++) {
-    arbres();
+  rowtrees();
+  fen2 = document.querySelector(".trees");
+  for (j = 0; j < nbtrees; j++) {
+    trees();
   }
 });

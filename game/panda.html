@@ -2,29 +2,42 @@
 <html>
   <head>
     <meta charset="utf-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet"/>
     <link rel="stylesheet" href="../src/css/game.css"/>
     <link rel="stylesheet" href="../src/css/style.css"/>
     <title></title>
   </head>
   <body>
-    <div id="game">
-      <div class="paquerettes">
-      </div>
+    <div id="game"> <!-- main game div -->
+      <div class="daisies"></div> <!-- elements after -->
       <div class="character">
-        <img src="../src/img/panda.gif" alt="Panda"/>
+        <img class="imgpanda" src="../src/img/panda.gif" alt="Panda"/>
       </div>
-      <div class="braco"></div>
-      <div class="arbres">
+      <div class="braco"></div> <!-- elements after -->
+      <div class="trees"></div> <!-- elements after -->
+      <div class="context"></div> <!-- elements after -->
+      <div class="end-window">
+        <p class="sentence">
+          Let's play save the Panda!
+        </p>
+        <p class="stage">
+          Stage 1
+        </p>
+        <button onclick="launch();">Start</button>
       </div>
     </div>
-    <div class="rangee-arbres-top"></div>
-    <div class="rangee-arbres-bottom"></div>
+    <div class="left-decor"></div>
+    <div class="right-decor"></div>
+    <!-- absolute trees rows (top and bottom) -->
+    <div class="row-trees-top"></div>
+    <div class="row-trees-bottom"></div>
+    <!-- scripts -->
     <script type="text/javascript" src="../src/apps/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="../src/js/vars.js"></script>
     <script type="text/javascript" src="../src/js/flowers.js"></script>
+    <script type="text/javascript" src="../src/js/start.js"></script>
     <script type="text/javascript" src="../src/js/trees.js"></script>
     <script type="text/javascript" src="../src/js/move.js"></script>
-    <script type="text/javascript" src="../src/js/levels.js"></script>
     <script type="text/javascript" src="../src/js/create-braco.js"></script>
     <script type="text/javascript" src="../src/js/main.js"></script>
   </body>
