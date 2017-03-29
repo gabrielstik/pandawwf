@@ -2,19 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet"/>
     <link rel="stylesheet" href="../src/css/game.css"/>
     <link rel="stylesheet" href="../src/css/style.css"/>
     <title></title>
   </head>
   <body>
     <div id="game">
-      <div class="paquerettes">
-      </div>
+      <div class="paquerettes"></div>
       <div class="character">
-        <img src="../src/img/panda.gif" alt="Panda"/>
+        <img class="imgpanda" src="../src/img/panda.gif" alt="Panda"/>
       </div>
       <div class="braco"></div>
-      <div class="arbres">
+      <div class="arbres"></div>
+      <div class="context"></div>
+      <div class="morale">
+        <p>
+          These magnificent mammals are omnivores. But whilst they will occasionally eat small animals and fish, bamboo counts for 99 percent of their diet.
+        </p>
+        <button onclick="nextLevel();reset();">Next level</button>
       </div>
     </div>
     <div class="rangee-arbres-top"></div>
@@ -22,9 +28,9 @@
     <script type="text/javascript" src="../src/apps/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="../src/js/vars.js"></script>
     <script type="text/javascript" src="../src/js/flowers.js"></script>
+    <script type="text/javascript" src="../src/js/start.js"></script>
     <script type="text/javascript" src="../src/js/trees.js"></script>
     <script type="text/javascript" src="../src/js/move.js"></script>
-    <script type="text/javascript" src="../src/js/levels.js"></script>
     <script type="text/javascript" src="../src/js/create-braco.js"></script>
     <script type="text/javascript" src="../src/js/main.js"></script>
   </body>

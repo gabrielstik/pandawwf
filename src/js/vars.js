@@ -1,3 +1,3 @@
-nbpaquerettes = 20;
-nbbracos = 50;
+nbpaquerettes = 50;
+nbbracos = 110;
 nbarbres = 5;

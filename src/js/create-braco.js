@@ -37,9 +37,9 @@ function spawn() {
 function move() {
   bracoloop = setInterval(function() {
     for (var j = 0; j < braco.length; j+=4) {
-      if (braco[j+1] - pandaY <= 50 && braco[j+1] - pandaY >= -50 && braco[j+2] - pandaX <= 50 && braco[j+2] - pandaX >= -50) {
+      if (braco[j+1] - pandaY <= 50 && braco[j+1] - pandaY >= -50 && braco[j+2] - pandaX <= 50 && braco[j+2] - pandaX >= -20) {
         contact = true;
-        pandaX -= braco[j+3];
+        pandaX = braco[j+2]-50;
         document.querySelector(".character").style.left=pandaX+"px";
       }
       braco[j+2] -= braco[j+3];
@@ -55,6 +55,5 @@ $(document).ready(function() {
     }
     catch(e) {}
     reset();
-    setTimeout('spawn();',100);
   // },5000);
 });
