@@ -117,15 +117,15 @@ div[class^="item-"] {
 
 .row-trees-top {
   position: absolute;
-  top: -50px;
-  left: calc(50vw - 510px);
+  top: 100px;
+  left: calc(50vw - 530px);
   height: 100px;
 }
 
 .row-trees-bottom {
   position: absolute;
-  top: 550px;
-  left: calc(50vw - 510px);
+  top: 700px;
+  left: calc(50vw - 530px);
   height: 100px;
 }
 
@@ -180,12 +180,13 @@ div[class^="item-"] {
   display: none; /* temporaire */
 }
 
-.end-window button {
+.end-window .launch-button {
   position: absolute;
   bottom: 20px;
+  height: 30px;
   cursor: pointer;
   width: 200px;
-  margin-left: 170px;
+  margin-left: 150px;
   border: none;
   background-color: #6ba84a;
   box-shadow: 0px 8px 1px rgb(70,140,40), 8px 8px 1px rgb(70,140,40);
@@ -199,7 +200,7 @@ div[class^="item-"] {
   transition: all .2s ease;
 }
 
-.end-window button:hover {
+.end-window .launch-button:hover {
   opacity: 1;
   transition: all .2s ease;
 }

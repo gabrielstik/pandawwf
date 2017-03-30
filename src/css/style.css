@@ -1,130 +1,239 @@
-/* BODY */
-
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  background: #ffffff;
+.overflowhidden {
+  overflow: hidden;
 }
 
+  /* BODY */
 
-/*********************************************************************************/
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    color: #33302D;
+    background-image: url(../img/bambou.png), url(../img/bambou-droite.png);
+    background-position: top left, top right;
+    background-repeat: no-repeat;
+    background-size: contain
+  }
+  /*********************************************************************************/
+  /* HEADER */
 
+  .header {
+    background-color: #33302d;
+    margin: 0;
+    height: 80px;
+    padding-bottom: 10px;
+  }
 
-/* HEADER */
+  .header .logo {
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 200px;
+    z-index: 10;
+    background-color: #ffffff;
+    border-left: 3px solid #33302d;
+    border-right: 3px solid #33302d;
+    border-bottom: 3px solid #33302d;
+  }
 
-.header {
-  background-color: #000000;
-  margin: 0;
-  padding-bottom: 10px;
-  border-bottom: 3px solid #000000;
+  .header .icon img {
+    height: 35px;
+    position: absolute;
+  }
+
+  .header .french_logo {
+    top: 20px;
+    right: 200px;
+  }
+
+  .header .english_logo {
+    top: 20px;
+    right: 240px;
+  }
+  /* Donate button */
+
+  .donate-button {
+    font-family: 'Lobster Two', cursive;
+    -webkit-border-radius: 13;
+    -moz-border-radius: 13;
+    border-radius: 13px;
+    border: 2px solid #ffffff;
+    padding: 9px 0px 9px 0px;
+    font-size: 20px;
+    margin-top: 15px;
+    background: #33302d;
+    text-decoration: none;
+    position: absolute;
+    right: 330px;
+  }
+
+  .donate-button a {
+    color: #ffffff;
+    font-size: 20px;
+    padding: 9px 40px 9px 40px;
+  }
+
+  .donate-button:hover {
+    background: #ffffff;
+    color: #33302d;
+    transition: all linear 0.2s;
+    text-decoration: none;
+  }
+
+  .donate-button:hover a {
+    color: #33302d;
+  }
+  /****************************************************************************/
+  /* CONTENT */
+
+  .content {
+    font-size: 16px;
+    text-align: center;
+    width:600px;
+    height:600px;
+    margin:auto;
+  }
+
+  .row{
+    width: 600px;
+    margin:30px auto;
 }
 
-.header img {
-  height: 100px;
-  position: absolute;
-  top: 0;
-  z-index: 10;
-  background-color: #ffffff;
-  border-left: 3px solid #000000;
-  border-right: 3px solid #000000;
-  border-bottom: 3px solid #000000;
-  padding: 10px;
-}
+  .content img {
+    width: 500px;
+    margin: 35px 0px 10px 50px;
+  }
 
+  .content #div1 {
+    margin-top: 30px;
+  }
 
-/* Donate button */
+  .content #div2 {
+    font-weight: bolder;
+    font-size: 20px;
+  }
 
-.donate-button {
-  -webkit-border-radius: 13;
-  -moz-border-radius: 13;
-  border-radius: 13px;
-  border: 2px solid #ffffff;
-  padding: 9px 40px 9px 40px;
-  font-size: 20px;
-  margin-top: 10px;
-  background: #000000;
-  text-decoration: none;
-}
+  .content .fade {
+    display: none;
+  }
 
-.donate-button a {
-  color: #ffffff;
-  font-size: 20px;
-}
+  .content .red {
+    color: #e74c3c;
+  }
+  /* PLAY ZONE */
 
-.donate-button:hover {
-  background: #ffffff;
-  color: #000000;
-  transition: all linear 0.2s;
-  text-decoration: none;
-}
+  .play-zone {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+  }
 
-.donate-button:hover a {
-  color: #000000;
-}
+  .play-zone img {
+    position: absolute;
+    bottom: -60px;
+    transition: all cubic-bezier(0.41, -0.18, 0.46, 0.57) 0.5s;
+    width: 200px;
+  }
+  /*Play button */
 
+  .button-play {
+    font-family: 'Lobster Two', cursive;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 30px;
+    padding: 20px 80px;
+    outline: none;
+    background-color: #6AB544;
+    border: none;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 0 9px #95a5a6;
+    position: absolute;
+  }
 
-/****************************************************************************/
+  .button-play:hover {
+    background-color: #357837;
+  }
 
+  .button-play:active {
+    background-color: #357837;
+    box-shadow: 0 3px #95a5a6;
+    transform: translateY(6px);
+  }
+  /********************** FOOTER ************************/
 
-/* CONTENT */
+  footer {
+    position: absolute;
+    bottom: -450px;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    background-color:#eaeaea;
+  }
+  /****************** Legal notices **************/
 
-.content {
-  font-size: 18px;
-  text-align: center;
-}
+   footer .legals{
+     text-transform: uppercase;
+     color:white;
+  }
 
-.content #div2 {
-  font-weight: bolder;
-  font-size: 20px;
-}
+  footer .legals:hover {
+    cursor: pointer;
+  }
+  /*******************  Legal PopUp *****************/
 
-.content .fade {
-  display: none;
-}
+  .overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+  }
 
+  .overlay-content {
+    position: relative;
+    top: 20%;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: #ffffff;
+    height: 500px;
+    overflow-y: scroll;
+    padding: 30px;
+  }
 
-/* PLAY ZONE */
+  .closePopup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
 
-.play-zone {
-  position: relative;
-  margin: auto;
-  margin-left: calc(50vw - 100px);
-}
+  .closePopup:hover {
+    cursor: pointer;
+    filter: invert(0);
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+  }
 
-.play-zone img {
-  position: absolute;
-  bottom: -60px;
-  transition: all cubic-bezier(0.41, -0.18, 0.46, 0.57) 0.5s;
-  width: 200px;
-}
+  .closePopup img {
+    height: 30px;
+  }
+  /****************************** SOCIAL ICONS *******************/
 
+  footer .fa {
+    color: #ffffff;
+    margin: 10px;
+    padding:30px 0;
+  }
 
-/*Play button */
-
-.button-play {
-  text-decoration: none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 24px;
-  padding: 40px 80px;
-  outline: none;
-  background-color: #27ae60;
-  border: none;
-  margin: auto;
-  border-radius: 5px;
-  box-shadow: 0 9px #95a5a6;
-  position: absolute;
-}
-
-.button-play:hover {
-  background-color: #2ecc71;
-}
-
-.button-play:active {
-  background-color: #2ecc71;
-  box-shadow: 0 3px #95a5a6;
-  transform: translateY(6px);
-}
+  footer .fa:hover {
+    color: #6ab544;
+  }

@@ -117,7 +117,7 @@ function keyPressed() { // if key pressed
 				// reset si defaite;
 			}
 		}
-		if (pandaX >= 1025) {
+		if (pandaX >= 975) {
 			if (gagne == false) {
 				gagne = true;
 				win();

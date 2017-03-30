@@ -3,11 +3,40 @@
   <head>
     <meta charset="utf-8"/>
     <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet"/>
-    <link rel="stylesheet" href="../src/css/game.css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
+    <link rel="stylesheet" href="../src/apps/foundation.min.css" />
     <link rel="stylesheet" href="../src/css/style.css"/>
-    <title></title>
+    <link rel="stylesheet" href="../src/css/game.css"/>
+    <link rel="icon" type="image/png" href="../src/img/pandapose.png" />
+    <title>Save the Panda</title>
   </head>
-  <body>
+  <body class="overflowhidden">
+    <header>
+      <div class="header">
+        <!--------------------------------- HEADER LOGO --------------------------------->
+        <div>
+          <a href="http://www.wwf.fr/" title="wwf website" target="_blank">
+            <img class="logo" src="../src/img/logo_WWF.svg" alt="Logo_WWF">
+          </a>
+        </div>
+        <!------------------------------ DONATE BUTTON ---------------------------------->
+        <div>
+          <button class="donate-button"><a href="https://faireundon.wwf.fr/" target="_blank" title="Faire un Don">Faire un don</a></button>
+        </div>
+        <!------------------------------- LANGUAGE  BUTTTONS ------------------------->
+        <div class="icon">
+          <a href="index.html" title="french page"><img class="french_logo" src="../src/img/french-panda.png" alt="French-Panda"></a>
+          <a href="english-index.html" title="english page"> <img src="../src/img/panda-english.png" class="english_logo" alt="English-panda"></a>
+        </div>
+      </div>
+    </header>
+    <div class="row">
+      <!-- <div class="large-4 large-offset-4 medium-4 medium-offset-4 small-12">
+        <a href="index.html"><img src="../src/img/logo-save.png" alt="Panda"></a>
+      </div> -->
+    </div>
     <div id="game"> <!-- main game div -->
       <div class="daisies"></div> <!-- elements after -->
       <div class="character">
@@ -24,14 +53,17 @@
         <p class="stage">
           Stage 1
         </p>
-        <button onclick="launch();">Start</button>
+        <button class="launch-button" onclick="launch();">Start</button>
       </div>
     </div>
-    <div class="left-decor"></div>
-    <div class="right-decor"></div>
     <!-- absolute trees rows (top and bottom) -->
     <div class="row-trees-top"></div>
     <div class="row-trees-bottom"></div>
+    <div class="left-decor"></div>
+    <div class="right-decor"></div>
+    <audio src="../src/mus/musiqueFond.wav" id="gameMusic"></audio>
+    <audio src="../src/mus/musiquePerdu.wav" id="loseMusic"></audio>
+    <audio src="../src/mus/musiqueGagne.mp3" id="winMusic"></audio>
     <!-- scripts -->
     <script type="text/javascript" src="../src/apps/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="../src/js/vars.js"></script>
