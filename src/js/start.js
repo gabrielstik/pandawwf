@@ -1,4 +1,4 @@
-level = 1;
+level = 3;
 restart = false;
 gameMusic = document.querySelector("#gameMusic");
 loseMusic = document.querySelector("#loseMusic");
@@ -19,7 +19,7 @@ function launch() {
 }
 
 function end() {
-  alert("todo");
+  console.log("?");
 }
 
 function nextLevel() {
@@ -43,21 +43,26 @@ function backCount() {
   setTimeout("$('.context').html('GO!');$('.context').fadeOut(500);keyPressed();",4000);
   setTimeout(function() {
     if (level == 1) {
-    spawn(80);
+      blocked = false;
+      spawn(80);
     }
     else if (level == 2) {
-      spawn(160);
+      blocked = false;
+      spawn(120);
     }
     else if (level == 3) {
-      end();
+      blocked = false;
+      // spawn(160);
+      spawn(1);
     }
     gagne = false;
     perdu = false;
-  },3000);
+  },4000);
 }
 
 function lose() {
   // clearInterval(moveInterval);
+  blocked = true;
   clearInterval(bracoloop);
   // clearInterval(itemInterval);
   stopMusic(gameMusic);
@@ -77,6 +82,7 @@ function lose() {
 
 function win() {
   // clearInterval(moveInterval);
+  blocked = true;
   clearInterval(bracoloop);
   // clearInterval(itemInterval);
   stopMusic(gameMusic);
@@ -87,7 +93,7 @@ function win() {
 			winMusic.load();    //reload audio event (and reset currentTime!)
 			winMusic.play();    //play audio event for subsequent 'ended' events
 		},false);
-	},100)
+	},100);
   $('.launch-button').html('Next level');
   if (level == 1) {
     $('.sentence').html('The giant panda has been on the endangered species list since 1990.');
@@ -95,8 +101,9 @@ function win() {
   else if (level == 2) {
     $('.sentence').html('From 1974-1989, half of the panda’s habitat in China’s Sichuan areas was destroyed by human activity.');
   }
-  else if (level == 3) {
-    $('.sentence').html('From 1974-1989, half of the panda’s habitat in China’s Sichuan areas was destroyed by human activity.');
+  else {
+    $('.sentence').html('You earn '+coinnumber+' coins saving the panda. Save him in real life by donating !');
+    $('.launch-button').html('Donate');
   }
   $('.context').html('SAVED!');
   $('.context').fadeIn(500);
@@ -112,7 +119,6 @@ function win() {
 
 function startMusic(music) {
 	music.play();
-
 	setInterval(function() {
 		music.addEventListener('ended', function(){
 			music.load();    //reload audio event (and reset currentTime!)

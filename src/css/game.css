@@ -10,6 +10,7 @@ body {
   margin: auto;
   width: 1000px;
   height: 600px;
+  margin-top: 70px;
   overflow: hidden;
 }
 
@@ -165,7 +166,7 @@ div[class^="item-"] {
   background-size: cover;
   background-repeat: none;
   background-position: center;
-  box-shadow: 10px -10px 50px black, 5px 10px 50px black;
+  box-shadow: 10px -10px 60px rgba(0,0,0,.7), 5px 10px 60px rgba(0,0,0,.7);
 }
 
 .end-window p {
@@ -203,4 +204,20 @@ div[class^="item-"] {
 .end-window .launch-button:hover {
   opacity: 1;
   transition: all .2s ease;
+}
+
+.coins-counter {
+  position: absolute;
+  top: 130px;
+  left: calc(50vw - 100px);
+  width: 200px;
+  font-family: 'Baloo Bhaina';
+  font-size: 36px;
+  text-align: center;
+  color: white;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.coins-counter img {
+  height: 36px;
 }

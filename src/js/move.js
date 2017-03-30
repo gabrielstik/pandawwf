@@ -2,6 +2,8 @@ contact = false;
 perdu = false;
 gagne = false;
 coin = 0;
+hasCoin = false;
+blocked = true;
 
 function keyPressed() { // if key pressed
 	var up = 0;
@@ -21,17 +23,17 @@ function keyPressed() { // if key pressed
 
 	document.body.onkeydown = function(e) {
 
-		if (e.keyCode == 37) { //leftArrow
+		if (e.keyCode == 37 && blocked == false) { //leftArrow
 			left = 1 * sp;
 			contact = false;
 		}
 
-		if(e.keyCode == 38) { //upArrow
+		if(e.keyCode == 38 && blocked == false) { //upArrow
 			up = 1 * sp;
 			contact = false;
 		}
 
-		if (contact == false) {
+		if (contact == false && blocked == false) {
 			if(e.keyCode == 39) { //rightArrow
 				if (contact == false) {
 						right = 1 * sp;
@@ -42,7 +44,7 @@ function keyPressed() { // if key pressed
 			}
 		}
 
-		if(e.keyCode == 40) { //downArrow
+		if(e.keyCode == 40 && blocked == false) { //downArrow
 			down = 1 * sp;
 			contact = false;
 		}
@@ -66,11 +68,6 @@ function keyPressed() { // if key pressed
 	}
 
 	moveInterval = setInterval(function moveBraco() {
-		// if (itemY - pandaY <= 40 && itemY - pandaY >= -40 && itemX - pandaX <= 40 && itemX - pandaX >= -40) {
-		// 	fen3.innerHTML='';
-		// 	createitem();
-		// 	coin++;
-		// }
 		if (contact == false) {
 			pandaX += (right - left)*speed;
 			pandaY += (down - up)*speed;
@@ -122,6 +119,15 @@ function keyPressed() { // if key pressed
 				gagne = true;
 				win();
 				// reset si victoire;
+			}
+		}
+		if (itemY - pandaY <= 40 && itemY - pandaY >= -40 && itemX - pandaX <= 40 && itemX - pandaX >= -40) {
+			if (hasCoin == false) {
+				hasCoin = true;
+				fen3.innerHTML='';
+				createitem();
+				pluscoin();
+				setTimeout('hasCoin = false;',2000);
 			}
 		}
 	},20);
