@@ -17,18 +17,19 @@
       <div class="header">
         <!--------------------------------- HEADER LOGO --------------------------------->
         <div>
-          <a href="http://www.wwf.fr/" title="wwf website" target="_blank">
+          <a href="../index.html" title="wwf website" target="_blank">
             <img class="logo" src="../src/img/logo_WWF.svg" alt="Logo_WWF">
           </a>
         </div>
         <!------------------------------ DONATE BUTTON ---------------------------------->
         <div>
-          <button class="donate-button"><a href="https://faireundon.wwf.fr/" target="_blank" title="Faire un Don">Faire un don</a></button>
+          <button class="fr donate-button"><a href="https://faireundon.wwf.fr/" target="_blank" title="Faire un Don">Faire un don</a></button>
+          <button class="en donate-button"><a href="https://donate.wwf.com/" target="_blank" title="Donate">Donate</a></button>
         </div>
         <!------------------------------- LANGUAGE  BUTTTONS ------------------------->
         <div class="icon">
-          <a href="index.html" title="french page"><img class="french_logo" src="../src/img/french-panda.png" alt="French-Panda"></a>
-          <a href="english-index.html" title="english page"> <img src="../src/img/panda-english.png" class="english_logo" alt="English-panda"></a>
+          <a onclick="switchfr()" title="french page"><img class="french_logo" src="../src/img/french-panda.png" alt="French-Panda"></a>
+          <a onclick="switchen()" title="english page"> <img src="../src/img/panda-english.png" class="english_logo" alt="English-panda"></a>
         </div>
       </div>
     </header>
@@ -37,6 +38,7 @@
       <div class="character">
         <img class="imgpanda" src="../src/img/panda.gif" alt="Panda"/>
       </div>
+      <div class="ices"></div> <!-- elements after -->
       <div class="items"></div> <!-- elements after -->
       <div class="braco"></div> <!-- elements after -->
       <div class="trees"></div> <!-- elements after -->
@@ -69,8 +71,10 @@
     <script type="text/javascript" src="../src/js/item.js"></script>
     <script type="text/javascript" src="../src/js/start.js"></script>
     <script type="text/javascript" src="../src/js/trees.js"></script>
+    <script type="text/javascript" src="../src/js/ice.js"></script>
     <script type="text/javascript" src="../src/js/move.js"></script>
     <script type="text/javascript" src="../src/js/create-braco.js"></script>
+    <script type="text/javascript" src="../src/js/lang.js"></script>
     <script type="text/javascript" src="../src/js/main.js"></script>
   </body>
 </html>

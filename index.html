@@ -18,18 +18,19 @@
     <div class="header">
       <!--------------------------------- HEADER LOGO --------------------------------->
       <div>
-        <a href="http://www.wwf.fr/" title="wwf website" target="_blank">
+        <a href="#" title="wwf website" target="_blank">
           <img class="logo" src="src/img/logo_WWF.svg" alt="Logo_WWF">
         </a>
       </div>
       <!------------------------------ DONATE BUTTON ---------------------------------->
       <div>
-        <button class="donate-button"><a href="https://faireundon.wwf.fr/" target="_blank" title="Faire un Don">Faire un don</a></button>
+        <button class="fr donate-button"><a href="https://faireundon.wwf.fr/" target="_blank" title="Faire un Don">Faire un don</a></button>
+        <button class="en donate-button"><a href="https://donate.wwf.com/" target="_blank" title="Donate">Donate</a></button>
       </div>
       <!------------------------------- LANGUAGE  BUTTTONS ------------------------->
       <div class="icon">
-        <a href="index.html" title="french page"><img class="french_logo" src="src/img/french-panda.png" alt="French-Panda"></a>
-        <a href="english-index.html" title="english page"> <img src="src/img/panda-english.png" class="english_logo" alt="English-panda"></a>
+        <a onclick="switchfr()" title="french page"><img class="french_logo" src="src/img/french-panda.png" alt="French-Panda"></a>
+        <a onclick="switchen()" title="english page"> <img src="src/img/panda-english.png" class="english_logo" alt="English-panda"></a>
       </div>
     </div>
   </header>
@@ -40,20 +41,24 @@
         <img src="src/img/logo-save.png" alt="Panda" class="img">
       </div>
       <div id="div1" class="fade  large-12 medium-12  small-12 columns">
-        <p> Depuis 1961, le WWF protège le règne animal notamment en luttant contre le braconnage, la destruction des habitats et les conflits avec l'Homme.</p>
+        <p class="fr">Depuis 1961, le WWF a protégé le royaume anumal, surtout en se battant contre le braconnage et contre les conflits entre humains et animaux.</p>
+        <p class="en">Since 1961, the WWF has been protecting the animal kingdom, notably by fighting poaching, habitat destruction and conflicts with humans.</p>
       </div>
       <div id="div2" class="fade  large-12 medium-12  small-12 columns">
-        <p>Plus d'<span class="red">une espèce sur trois</span> est aujourd'hui menacée de <span class="red">disparition</span> dans le monde.</p>
+        <p class="fr">Plus d'<span class="red">une espèce sur trois</span> est aujourd'hui menacée de <span class="red">disparition</span> dans le monde.</p>
+        <p class="en">More than <span class="red">one specie out of three</span> is today threatened with <span class="red">extinction</span> worldwide.</p>
       </div>
       <div id="div3" class="fade large-12 medium-12  small-12 columns">
-        <p>L’heure de sauver le panda a sonné ! Évite les braconniers et les différents obstacles rencontrés, si ton panda survit : bienvenue chez les défenseurs de la cause animale.</p>
+        <p class="fr">C'est le moment de sauver les pandas. Evite les braconniers et récoltez des pièces et des bonus : bienvenue parmi les défenseurs de la cause animale !</p>
+        <p class="en">It's time to Save The Panda ! Avoid the poachers and get ice and coins, if your panda survives: welcome to the defenders of the animal cause</p>
       </div>
     </div>
   </div>
   <a href="game/panda.html">
     <div id="div4" class="play-zone fade">
       <img src="src/img/pandapose.png" alt="Panda">
-      <button class="button-play">Jouer</button>
+      <button class="fr button-play">Jouer</button>
+      <button class="en button-play">Play</button>
     </div>
   </a>
 
@@ -66,7 +71,7 @@
       <a href="https://www.youtube.com/channel/UCZZldeOoWhKe7SaisbCPk5Q" title="youtube" target="_blank"><i class="fa fa-youtube fa-3x"></i></a>
     </div>
     <div>
-      <span class="legals">Mentions Légales</span>
+      <span class="legals" class="fr">Mentions Légales</span>
     </div>
   </footer>
   <!----------------------------------- LEGALS POPUP------------------------------>
@@ -134,10 +139,10 @@
         <p>Informations personnelles : « les informations qui permettent, sous quelque forme que ce soit, directement ou non, l'identification des personnes physiques auxquelles elles s'appliquent » (article 4 de la loi n° 78-17 du 6 janvier 1978).</p>
     </div>
     <!----------------------------------- SCRIPTS --------------------------------->
-    <script type="text/javascript" src="src/apps/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="src/apps/foundation.min.js"></script>
-    <script type="text/javascript" src="src/js/main.js"></script>
-
+  <script type="text/javascript" src="src/apps/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="src/apps/foundation.min.js"></script>
+  <script type="text/javascript" src="src/js/main.js"></script>
+  <script type="text/javascript" src="src/js/lang.js"></script>
 </body>
 
 </html>

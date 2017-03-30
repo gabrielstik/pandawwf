@@ -100,6 +100,23 @@ div[class^="tre-"] {
   height: 80px;
 }
 
+.ices {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+div[class^="ice-"] {
+  position: absolute;
+  background: url(../img/ice.png);
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+}
+
+
 .items {
   position: absolute;
   top: 0;

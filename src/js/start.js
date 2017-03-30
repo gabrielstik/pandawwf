@@ -1,4 +1,4 @@
-level = 3;
+level = 1;
 restart = false;
 gameMusic = document.querySelector("#gameMusic");
 loseMusic = document.querySelector("#loseMusic");
@@ -52,8 +52,7 @@ function backCount() {
     }
     else if (level == 3) {
       blocked = false;
-      // spawn(160);
-      spawn(1);
+      spawn(160);
     }
     gagne = false;
     perdu = false;
@@ -102,8 +101,9 @@ function win() {
     $('.sentence').html('From 1974-1989, half of the panda’s habitat in China’s Sichuan areas was destroyed by human activity.');
   }
   else {
-    $('.sentence').html('You earn '+coinnumber+' coins saving the panda. Save him in real life by donating !');
+    $('.sentence').html('You earn '+coin+' coins saving the panda. Save him in real life by donating !<br/>If you donate, '+coin+'€ would be added !');
     $('.launch-button').html('Donate');
+    $('.launch-button').attr('onclick','window.location="https://faireundon.wwf.fr/"');
   }
   $('.context').html('SAVED!');
   $('.context').fadeIn(500);

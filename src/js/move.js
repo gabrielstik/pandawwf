@@ -3,6 +3,7 @@ perdu = false;
 gagne = false;
 coin = 0;
 hasCoin = false;
+hasIce = false;
 blocked = true;
 
 function keyPressed() { // if key pressed
@@ -126,8 +127,19 @@ function keyPressed() { // if key pressed
 				hasCoin = true;
 				fen3.innerHTML='';
 				createitem();
-				pluscoin();
+				if (coin < 5) {
+					pluscoin();
+				}
 				setTimeout('hasCoin = false;',2000);
+			}
+		}
+		if (iceY - pandaY <= 40 && iceY - pandaY >= -40 && iceX - pandaX <= 40 && iceX - pandaX >= -40) {
+			if (hasIce == false) {
+				hasIce = true;
+				fen4.innerHTML='';
+				createice();
+				iceeffect();
+				setTimeout('hasIce = false;',2000);
 			}
 		}
 	},20);
