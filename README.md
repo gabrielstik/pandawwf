@@ -1,27 +1,19 @@
-# PHP Template
+# Save the Panda
 
-A PHP template ready-to-use for any project.
+Save the Panda is an annex website of WWF.
 
-## Prerequisites
-
-You will need to install
-* [Node.js](https://nodejs.org/en/download/)
-* MAMP or WAMP
+Save the Panda is a game where the aim is to aware young people about poachering pandas in China. In that game you are a panda and you have to escape the poachers collecting coins. Those coins are a bonus if you donate to WWF at the end of the game.
 
 
-### Installing
+## Controls
 
-How to get started with the development environment running.
-
-* First install node-modules
-
-```
-sudo npm install
-```
-
-* Then create your own database
-
-* Define your database, your local address and port in include/config.php
+* Arrows
 
 
-And now enjoy !
+## Items
+
+* Coin : gives you a donate bonus
+* Ice ; freezes poachers
+
+
+Enjoy !
