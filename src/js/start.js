@@ -35,7 +35,12 @@ function nextLevel() {
 }
 
 function backCount() {
-  $('.context').html('STAGE '+level);
+  if (lang == 'fr') {
+    $('.context').html('NIV '+level);
+  }
+  else {
+    $('.context').html('STAGE '+level);
+  }
   $('.context').fadeIn(500);
   setTimeout("$('.context').html('3');",1000);
   setTimeout("$('.context').html('2');",2000);
@@ -70,11 +75,26 @@ function lose() {
   $('.end-window').css({
     "background-image": "url(../src/img/panda-triste.png)"
   });
-  $('.sentence').html('You lose');
+    if (lang == 'fr') {
+    $('.sentence').html("Vous ne l'avez pas sauvé");
+  }
+  else {
+    $('.sentence').html("You didn't save him");
+  }
   $('.stage').fadeOut();
-  $('.launch-button').html('Restart');
+  if (lang == 'fr') {
+    $('.launch-button').html('Rééssayer');
+  }
+  else {
+    $('.launch-button').html('Restart');
+  }
   restart = true;
-  $('.context').html('CAUGHT');
+  if (lang == 'fr') {
+    $('.context').html('CAPUTURÉ');
+  }
+  else {
+    $('.context').html('CAUGHT');
+  }
   $('.context').fadeIn(500);
   setTimeout("$('.context').fadeOut(200);$('.end-window').fadeIn(500);",2000);
 }
@@ -93,26 +113,68 @@ function win() {
 			winMusic.play();    //play audio event for subsequent 'ended' events
 		},false);
 	},100);
-  $('.launch-button').html('Next level');
-  if (level == 1) {
-    $('.sentence').html('The giant panda has been on the endangered species list since 1990.');
-  }
-  else if (level == 2) {
-    $('.sentence').html('From 1974-1989, half of the panda’s habitat in China’s Sichuan areas was destroyed by human activity.');
+  if (lang == 'fr') {
+    $('.launch-button').html('Niveau suivant');
   }
   else {
-    $('.sentence').html('You earn '+coin+' coins saving the panda. Save him in real life by donating !<br/>If you donate, '+coin+'€ would be added !');
-    $('.launch-button').html('Donate');
-    $('.launch-button').attr('onclick','window.location="https://faireundon.wwf.fr/"');
+    $('.launch-button').html('Next level');
   }
-  $('.context').html('SAVED!');
+  if (level == 1) {
+    if (lang == 'fr') {
+      $('.sentence').html('Le panda géant a été ajouté à la liste des espèces menacées dès 1990.');
+    }
+    else {
+      $('.sentence').html('The giant panda has been on the endangered species list since 1990.');
+    }
+  }
+  else if (level == 2) {
+    if (lang == 'fr') {
+      $('.sentence').html("De 1974 à 1989, la moitié des habitats en Chine a été détruite par l'activité humaine.");
+    }
+    else {
+      $('.sentence').html('From 1974 to 1989, half of the panda’s habitat in China’s Sichuan areas was destroyed by human activity.');
+    }
+  }
+  else {
+    if (lang == 'fr') {
+      $('.sentence').html('Vous avez gagné '+coin+' en sauvant le panda ; sauvez les vraiment en faisant un don !<br/>Si vous faites un don, '+coin+'€ seront ajoutés à votre don!');
+    }
+    else {
+      $('.sentence').html('You earn '+coin+' coins saving the panda. Save him in real life by donating !<br/>If you donate, '+coin+'€ would be added !');
+    }
+    if (lang == 'fr') {
+      $('.launch-button').html('Faire un don');
+      $('.launch-button').attr('onclick','window.location="https://donate.wwf.com/"');
+    }
+    else {
+      $('.launch-button').html('Donate');
+      $('.launch-button').attr('onclick','window.location="https://faireundon.wwf.fr/"');
+    }
+  }
+  if (lang == 'fr') {
+    $('.context').html('SAUVÉ!');
+  }
+  else {
+    $('.context').html('SAVED!');
+  }
   $('.context').fadeIn(500);
   level++;
-  $('.context').html('SAVED!');
+  if (lang == 'fr') {
+    $('.context').html('SAUVÉ!');
+  }
+  else {
+    $('.context').html('SAVED!');
+  }
   setTimeout(function(){$('.context').fadeOut(1000);});
   setTimeout(function() {
-    $('.context').html('STAGE '+level);
-    $('.stage').html('STAGE '+level);
+    if (lang == 'fr') {
+      $('.context').html('NIV '+level);
+      $('.context').html('NIV '+level);
+    }
+    else {
+      $('.context').html('STAGE '+level);
+      $('.context').html('STAGE '+level);
+    }
   },1500);
   setTimeout("$('.end-window').fadeIn(500);",2500);
 }
