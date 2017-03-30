@@ -2,6 +2,8 @@ iceX = 0;
 iceY = 0;
 fen4 = document.querySelector('.ices');
 
+/* same as item spawning */
+
 function ice() {
   iceX = Math.floor(Math.random()*950)+50;
   iceY = Math.floor(Math.random()*550);

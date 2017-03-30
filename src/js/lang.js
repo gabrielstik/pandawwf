@@ -1,3 +1,5 @@
+/* lang switches */
+
 lang = 'en';
 
 function switchen() {

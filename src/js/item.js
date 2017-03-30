@@ -2,17 +2,19 @@ itemX = 0;
 itemY = 0;
 coinnumber = 0;
 
-function item() {
-  itemX = Math.floor(Math.random()*950)+50;
-  itemY = Math.floor(Math.random()*550);
-  fen3.innerHTML='<div class="item-coin"></div>';
-  $('.item-coin').css({
-    "left": itemX,
-    "top": itemY
-  });
+function item() { /* create coins */
+  if (coinnumber < 5) {
+    itemX = Math.floor(Math.random()*950)+50;
+    itemY = Math.floor(Math.random()*550);
+    fen3.innerHTML='<div class="item-coin"></div>';
+    $('.item-coin').css({
+      "left": itemX,
+      "top": itemY
+    });
+  }
 }
 
-function createitem() {
+function createitem() { /* create coins loop */
   if (coinnumber < 5) {
     setTimeout(function() {
       var ran = Math.floor(Math.random()*5000)+2000;
@@ -23,7 +25,9 @@ function createitem() {
   }
 }
 
-function pluscoin() {
+function pluscoin() { /* add score */
+  startMusic(coinMusic);
+  setTimeout('stopMusic(coinMusic);',1000);
   coin++;
   $('.coins-counter span').html(coin);
 }

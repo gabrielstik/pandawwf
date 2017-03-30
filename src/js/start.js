@@ -3,12 +3,9 @@ restart = false;
 gameMusic = document.querySelector("#gameMusic");
 loseMusic = document.querySelector("#loseMusic");
 winMusic = document.querySelector("#winMusic");
+character = document.querySelector('.character');
 
-$(document).ready(function () {
-  // nothing
-});
-
-function launch() {
+function launch() { /* At the start of the game */
   if (restart == true) {
     location.reload();
   }
@@ -18,15 +15,11 @@ function launch() {
   }
 }
 
-function end() {
-  console.log("?");
-}
-
-function nextLevel() {
+function nextLevel() { /* reset coords and windows if next level */
   pandaX = 100;
 	pandaY = 275;
-	document.querySelector('.character').style.left=pandaX;
-	document.querySelector('.character').style.top=pandaY;
+	character.style.left=pandaX;
+	character.style.top=pandaY;
   $('.end-window').fadeOut(100);
   setTimeout("backCount();",1000);
   stopMusic(gameMusic);
@@ -34,8 +27,8 @@ function nextLevel() {
 	stopMusic(loseMusic);
 }
 
-function backCount() {
-  if (lang == 'fr') {
+function backCount() { /* backcount before start */
+  if (lang == 'fr') { /* for lang */
     $('.context').html('NIV '+level);
   }
   else {
@@ -47,28 +40,28 @@ function backCount() {
   setTimeout("$('.context').html('1');startMusic(gameMusic);",3000);
   setTimeout("$('.context').html('GO!');$('.context').fadeOut(500);keyPressed();",4000);
   setTimeout(function() {
-    if (level == 1) {
-      blocked = false;
-      spawn(80);
-    }
-    else if (level == 2) {
-      blocked = false;
-      spawn(120);
-    }
-    else if (level == 3) {
-      blocked = false;
-      spawn(160);
+    switch(level) { /* spawn rate after timeout */
+      case 1:
+        blocked = false;
+        spawn(80);
+        break;
+      case 2:
+        blocked = false;
+        spawn(120);
+        break;
+      case 3:
+        blocked = false;
+        spawn(160);
+        break;
     }
     gagne = false;
     perdu = false;
   },4000);
 }
 
-function lose() {
-  // clearInterval(moveInterval);
-  blocked = true;
+function lose() { /* in case of lose */
+  blocked = true; /* make the panda can't move */
   clearInterval(bracoloop);
-  // clearInterval(itemInterval);
   stopMusic(gameMusic);
   stopMusic(winMusic);
 	startMusic(loseMusic);
@@ -76,10 +69,10 @@ function lose() {
     "background-image": "url(../src/img/panda-triste.png)"
   });
     if (lang == 'fr') {
-    $('.sentence').html("Vous ne l'avez pas sauvé");
+    $('.sentence').html("Vous ne l'avez pas sauvé. Sauvez les en vrai, faites un don !");
   }
   else {
-    $('.sentence').html("You didn't save him");
+    $('.sentence').html("You didn't save him. Save them in real life, donate !");
   }
   $('.stage').fadeOut();
   if (lang == 'fr') {
@@ -99,15 +92,13 @@ function lose() {
   setTimeout("$('.context').fadeOut(200);$('.end-window').fadeIn(500);",2000);
 }
 
-function win() {
-  // clearInterval(moveInterval);
+function win() { /* in case of win */
   blocked = true;
   clearInterval(bracoloop);
-  // clearInterval(itemInterval);
   stopMusic(gameMusic);
   stopMusic(loseMusic);
 	startMusic(winMusic);
-  setInterval(function() {
+  setInterval(function() { /* music managing */
 		winMusic.addEventListener('ended', function(){
 			winMusic.load();    //reload audio event (and reset currentTime!)
 			winMusic.play();    //play audio event for subsequent 'ended' events
@@ -144,7 +135,7 @@ function win() {
     }
     if (lang == 'fr') {
       $('.launch-button').html('Faire un don');
-      $('.launch-button').attr('onclick','window.location="https://donate.wwf.com/"');
+      $('.launch-button').attr('onclick','window.location="https://faireundon.wwf.fr/"');
     }
     else {
       $('.launch-button').html('Donate');
@@ -181,12 +172,6 @@ function win() {
 
 function startMusic(music) {
 	music.play();
-	setInterval(function() {
-		music.addEventListener('ended', function(){
-			music.load();    //reload audio event (and reset currentTime!)
-			music.play();    //play audio event for subsequent 'ended' events
-		},false);
-	},100)
 }
 
 function stopMusic(music) {

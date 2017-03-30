@@ -22,7 +22,7 @@ function rowtrees() {
 $(document).ready(function() {
   rowtrees();
   fen2 = document.querySelector(".trees");
-  for (j = 0; j < nbtrees; j++) {
+  for (j = 0; j < 5; j++) {
     trees();
   }
 });
