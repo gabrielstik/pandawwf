@@ -1,6 +1,7 @@
 contact = false;
 perdu = false;
 gagne = false;
+coin = 0;
 
 function keyPressed() { // if key pressed
 	var up = 0;
@@ -65,6 +66,11 @@ function keyPressed() { // if key pressed
 	}
 
 	moveInterval = setInterval(function moveBraco() {
+		// if (itemY - pandaY <= 40 && itemY - pandaY >= -40 && itemX - pandaX <= 40 && itemX - pandaX >= -40) {
+		// 	fen3.innerHTML='';
+		// 	createitem();
+		// 	coin++;
+		// }
 		if (contact == false) {
 			pandaX += (right - left)*speed;
 			pandaY += (down - up)*speed;

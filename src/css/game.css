@@ -99,6 +99,22 @@ div[class^="tre-"] {
   height: 80px;
 }
 
+.items {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+div[class^="item-"] {
+  position: absolute;
+  background: url(../img/coin.png);
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+}
+
 .row-trees-top {
   position: absolute;
   top: -50px;

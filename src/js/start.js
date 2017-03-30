@@ -15,6 +15,10 @@ function launch() {
   }
 }
 
+function end() {
+  alert("todo");
+}
+
 function nextLevel() {
   pandaX = 100;
 	pandaY = 275;
@@ -33,13 +37,13 @@ function backCount() {
   setTimeout("$('.context').html('GO!');$('.context').fadeOut(500);keyPressed();",4000);
   setTimeout(function() {
     if (level == 1) {
-    spawn(40);
+    spawn(80);
     }
     else if (level == 2) {
-      spawn(80);
+      spawn(160);
     }
     else if (level == 3) {
-      spawn(120);
+      end();
     }
     gagne = false;
     perdu = false;
@@ -49,6 +53,7 @@ function backCount() {
 function lose() {
   // clearInterval(moveInterval);
   clearInterval(bracoloop);
+  // clearInterval(itemInterval);
   $('.sentence').html('You lose');
   $('.stage').fadeOut();
   $('button').html('Restart');
@@ -61,6 +66,7 @@ function lose() {
 function win() {
   // clearInterval(moveInterval);
   clearInterval(bracoloop);
+  // clearInterval(itemInterval);
   $('button').html('Next level');
   if (level == 1) {
     $('.sentence').html('The giant panda has been on the endangered species list since 1990.');

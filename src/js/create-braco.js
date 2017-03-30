@@ -13,7 +13,7 @@ function spawn(nbbracos) { // creating bracos
     id++;
     var type = Math.floor(Math.random()*3);
     posY = Math.floor(Math.random()*550);
-    posX = Math.floor(Math.random()*3000)+1000;
+    posX = Math.floor(Math.random()*5000)+1000;
     speed = Math.random()*1+3;
     braco[i] = id;
     braco[i+1] = posY;
@@ -54,5 +54,5 @@ $(document).ready(function() {
       clearInterval(bracoloop);
     }
     catch(e) {}
-  // },5000);
+  // },6000);
 });
