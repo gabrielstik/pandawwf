@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/apps/foundation.min.css" />
+    <link rel="stylesheet" href="../assets/css/library.min.css"/>
+    <link rel="icon" type="image/png" href="../assets/img/pandapose.png" />
+    <title>Save the Panda</title>
+  </head>
+  <body class="overflowhidden green">
+    <header>
+      <div class="header">
+        <!-- HEADER LOGO --------------------------------->
+        <div>
+          <a href="../index.html" title="wwf website" target="_blank">
+            <img class="logo" src="../assets/img/logo_WWF.svg" alt="Logo_WWF">
+          </a>
+        </div>
+        <!-- DONATE BUTTON ---------------------------------->
+        <div>
+          <button class="fr donate-button"><a href="https://faireundon.wwf.fr/" target="_blank" title="Faire un Don">Faire un don</a></button>
+          <button class="en donate-button"><a href="https://faireundon.wwf.fr/" target="_blank" title="Donate">Donate</a></button>
+        </div>
+        <!-- LANGUAGE  BUTTTONS ------------------------->
+        <div class="icon">
+          <a onclick="switchfr()" title="french page"><img class="french_logo" src="../assets/img/french-panda.png" alt="French-Panda"></a>
+          <a onclick="switchen()" title="english page"> <img src="../assets/img/panda-english.png" class="english_logo" alt="English-panda"></a>
+        </div>
+      </div>
+    </header>
+    <div id="game"> <!-- main game div -->
+      <div class="daisies"></div> <!-- elements after -->
+      <div class="character">
+        <img class="imgpanda" src="../assets/img/panda.gif" alt="Panda"/>
+      </div>
+      <div class="ices"></div> <!-- elements after -->
+      <div class="items"></div> <!-- elements after -->
+      <div class="braco"></div> <!-- elements after -->
+      <div class="trees"></div> <!-- elements after -->
+      <div class="context"></div> <!-- elements after -->
+      <div class="end-window">
+        <p class="sentence">
+          Let's Save the Panda!
+        </p>
+        <p class="stage">
+          Stage 1
+        </p>
+        <button class="en launch-button" onclick="launch();">Start</button>
+        <button class="fr launch-button" onclick="launch();">Jouer</button>
+      </div>
+    </div>
+    <!-- absolute trees rows (top and bottom) -->
+    <div class="row-trees-top"></div>
+    <div class="row-trees-bottom"></div>
+    <div class="left-decor"></div>
+    <div class="right-decor"></div>
+    <div class="coins-counter"><img alt="coin" src="../assets/img/coin.png">
+      <span>0</span>
+    </div>
+    <audio src="../assets/mus/musiqueFond.mp3" id="gameMusic"></audio>
+    <audio src="../assets/mus/musiquePerdu.wav" id="loseMusic" loop></audio>
+    <audio src="../assets/mus/musiqueGagne.mp3" id="winMusic"></audio>
+    <audio src="../assets/mus/coin.mp3" id="coinMusic"></audio>
+    <!-- scripts -->
+    <script type="text/javascript" src="../assets/apps/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../assets/js/main.min.js"></script>
+  </body>
+</html>

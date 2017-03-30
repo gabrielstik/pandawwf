@@ -1,0 +1,240 @@
+/* All game style */
+
+.green {
+  background-color: #6ab544;
+}
+
+#game {
+  background-color: #6ba84a;
+  position: relative;
+  margin: auto;
+  width: 1000px;
+  height: 600px;
+  margin-top: 70px;
+  overflow: hidden;
+}
+
+.left-decor {
+  position: absolute;
+  margin-top: -600px;
+  right: calc(50% - 610px);
+  width: 196px;
+  height: 600px;
+  background-image: url(../img/decor-right.gif);
+  background-size: contain;
+}
+
+.right-decor {
+  position: absolute;
+  margin-top: -600px;
+  left: calc(50% - 610px);
+  width: 203px;
+  height: 600px;
+  background-image: url(../img/decor-left.png);
+  background-size: contain;
+}
+
+.character {
+  position: absolute;
+  top: 275px;
+  left: 100px;
+  height: 70px;
+  width: 70px;
+}
+
+.character img {
+  width: 70px;
+  height: 70px;
+}
+
+div[class^='braco-'] {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  transform: rotate(-270deg);
+  right: 0;
+}
+
+div[class^='braco-'] img {
+  width: 70px;
+  width: 70px;
+}
+
+.daisies {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.holes {
+	position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+div[class^="dai-"] {
+  position: absolute;
+  background: url(../img/paquerette.png);
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+}
+
+.trees {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+div[class^="tre-"] {
+  position: absolute;
+  background: url(../img/arbre.gif);
+  background-size: cover;
+  width: 80px;
+  height: 80px;
+}
+
+.ices {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+div[class^="ice-"] {
+  position: absolute;
+  background: url(../img/ice.png);
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+}
+
+
+.items {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+div[class^="item-"] {
+  position: absolute;
+  background: url(../img/coin.png);
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+}
+
+.row-trees-top {
+  position: absolute;
+  top: 100px;
+  left: calc(50vw - 530px);
+  height: 100px;
+}
+
+.row-trees-bottom {
+  position: absolute;
+  top: 700px;
+  left: calc(50vw - 530px);
+  height: 100px;
+}
+
+.row-tree {
+  margin-left: -20px;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  background: url(../img/arbre.gif);
+  background-size: cover;
+}
+
+.context {
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: calc(50% - 500px);
+  color: white;
+  text-shadow: -10px 0 black, 0 10px black, 10px 0 black, 0 -10px black;
+  width: 1000px;
+  text-align: center;
+  font-family: 'Baloo Bhaina';
+  font-size: 200px;
+  margin: 0;
+  padding: 0;
+}
+
+.end-window {
+  padding: 20px;
+  display: block;
+  position: absolute;
+  top: 100px;
+  left: calc(50% - 295px);
+  width: 550px;
+  height: 350px;
+  background: url(../img/window-bg.png);
+  background-size: cover;
+  background-repeat: none;
+  background-position: center;
+  box-shadow: 10px -10px 60px rgba(0,0,0,.7), 5px 10px 60px rgba(0,0,0,.7);
+}
+
+.end-window p {
+  margin: 15px;
+  color: rgb(50,50,50);
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Baloo Bhaina';
+}
+
+.stage {
+  display: none; /* temporaire */
+}
+
+.end-window .launch-button {
+  position: absolute;
+  bottom: 20px;
+  height: 30px;
+  cursor: pointer;
+  width: 200px;
+  margin-left: 150px;
+  border: none;
+  background-color: #6ba84a;
+  box-shadow: 0px 8px 1px rgb(70,140,40), 8px 8px 1px rgb(70,140,40);
+  border-radius: 30px;
+  text-transform: uppercase;
+  color: white;
+  font-size: 18px;
+  font-family: 'Baloo Bhaina';
+  outline-width: 0;
+  opacity: .9;
+  transition: all .2s ease;
+}
+
+.end-window .launch-button:hover {
+  opacity: 1;
+  transition: all .2s ease;
+}
+
+.coins-counter {
+  position: absolute;
+  top: 130px;
+  left: calc(50vw - 100px);
+  width: 200px;
+  font-family: 'Baloo Bhaina';
+  font-size: 36px;
+  text-align: center;
+  color: white;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.coins-counter img {
+  height: 36px;
+}

@@ -66,7 +66,7 @@ function lose() { /* in case of lose */
   stopMusic(winMusic);
 	startMusic(loseMusic);
   $('.end-window').css({
-    "background-image": "url(../src/img/panda-triste.png)"
+    "background-image": "url(../assets/img/panda-triste.png)"
   });
     if (lang == 'fr') {
     $('.sentence').html("Vous ne l'avez pas sauvé. Sauvez les en vrai, faites un don !");

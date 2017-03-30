@@ -20,13 +20,13 @@ function spawn(nbbracos) { // creating bracos
     braco[i+2] = posX;
     braco[i+3] = speed;
     if (type == 1) {
-      bracodiv.innerHTML+='<div class="braco-'+id+'"><img src="../src/img/braco-hache.gif"/></div>';
+      bracodiv.innerHTML+='<div class="braco-'+id+'"><img src="../assets/img/braco-hache.gif"/></div>';
     }
     else if (type == 2) {
-      bracodiv.innerHTML+='<div class="braco-'+id+'"><img src="../src/img/braco-couto.gif"/></div>';
+      bracodiv.innerHTML+='<div class="braco-'+id+'"><img src="../assets/img/braco-couto.gif"/></div>';
     }
     else {
-      bracodiv.innerHTML+='<div class="braco-'+id+'"><img src="../src/img/braco-fusil.gif"/></div>';
+      bracodiv.innerHTML+='<div class="braco-'+id+'"><img src="../assets/img/braco-fusil.gif"/></div>';
     }
     document.querySelector(".braco-"+id).style.top=posY+"px";
     document.querySelector(".braco-"+id).style.left=posX+"px";
@@ -34,7 +34,7 @@ function spawn(nbbracos) { // creating bracos
   move();
 }
 
-function move() { // bracos' move
+function move() { // bracos move
   bracoloop = setInterval(function() {
     for (var j = 0; j < braco.length; j+=4) {
       if (braco[j+1] - pandaY <= 50 && braco[j+1] - pandaY >= -50 && braco[j+2] - pandaX <= 50 && braco[j+2] - pandaX >= -20) {
